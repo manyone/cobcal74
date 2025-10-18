@@ -1,7 +1,7 @@
 
 # cobcal74.cob – A COBOL-74 Expression Evaluator (for TK4-)
 
-A **classic fixed-format COBOL-74** program that evaluates arithmetic expressions with floating-point precision. Designed to run in vintage environments like **TK4- (Hercules MVS)** and modern GNU COBOL (with `-std=cobol74`).
+A **classic fixed-format COBOL-74** program that evaluates arithmetic expressions with floating-point precision. Designed to run in vintage environments like **TK4- (Hercules MVS)** and modern GNUCOBOL.
 
 No recursion, no `EVALUATE`, no `END-xxx` scope terminators — just pure COBOL-74 procedural logic.
 
@@ -60,9 +60,9 @@ Type `END` to quit.
 
 ## 🛠️ Compilation & Usage
 
-### GNU COBOL (Linux/macOS/Windows via WSL)
+### GNUCOBOL (Linux/macOS/Windows via WSL)
 ```sh
-cobc -x -std=cobol74 cobcal74.cob -o cobcal74
+cobc -x cobcal74.cob 
 ./cobcal74
 ```
 
@@ -140,6 +140,7 @@ Public domain. Use, modify, and share freely — especially in mainframe classro
   
 
 ---
+
 
 
 
