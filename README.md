@@ -121,7 +121,7 @@ END
 
 ## 📜 License
 
-Public domain. Use, modify, and share freely — especially in mainframe classrooms and COBOL retro projects!
+GNU General Public License v3.0 or later — see LICENSE  
 
 ----------
 
@@ -140,6 +140,7 @@ Public domain. Use, modify, and share freely — especially in mainframe classro
   
 
 ---
+
 
 
 
