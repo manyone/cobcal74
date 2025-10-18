@@ -1,5 +1,5 @@
 
-# cobcal74.cob – A COBOL-74 Expression Evaluator
+# cobcal74.cob – A COBOL-74 Expression Evaluator (for TK-)
 
 A **classic fixed-format COBOL-74** program that evaluates arithmetic expressions with floating-point precision. Designed to run in vintage environments like **TK4- (Hercules MVS)** and modern GNU COBOL (with `-std=cobol74`).
 
@@ -52,7 +52,7 @@ Evaluation proceeds **left to right**, applying operators according to precedenc
 
 Type `END` to quit.
 
-(see *testcases.txt* for test suite)
+(see *testfile.txt* for test suite)
 
 ---
 
@@ -72,6 +72,49 @@ cobc -x -std=cobol74 cobcal74.cob -o cobcal74
 
 > 💡 The program includes `>>SOURCE FORMAT IS FIXED` for compatibility with GNU COBOL in online IDEs like JDoodle.
 
+Below is the actual step for running the test suite
+```
+//HERC02C  JOB (COB),                         
+//             'COBCAL74',                    
+//             CLASS=A,                       
+//             MSGCLASS=C,                    
+//             REGION=0M,TIME=1440,           
+//             MSGLEVEL=(1,1)                 
+//*             
+//RUN  EXEC PGM=COBCAL74                      
+//SYSOUT  DD SYSOUT=*                         
+//STEPLIB DD DISP=SHR,DSN=HERC02.RUN.LOAD     
+//SYSIN DD *                                  
+5                                             
+(5)                                           
+-5                                            
+(-5)                                          
+3+4                                           
+3-4                                           
+3*4                                           
+8/2                                           
+2^3                                           
+2^3^2                                         
+2^(3^2)                                       
+2+3*4                                         
+(2+3)*4                                       
+10-2*3                                        
+2*3+4*5                                       
+10/2-3                                        
+-2+3                                          
+-(2+3)                                        
+2^3*4                                         
+2*3^2                                         
+10/2^2                                        
+-2^2                                          
+(-2)^2                                        
+1+2*3^2                                       
+((2))                                         
+0/5                                           
+1/3                                           
+2^0                                           
+END
+```
 ----------
 
 ## 📜 License
@@ -80,7 +123,7 @@ Public domain. Use, modify, and share freely — especially in mainframe classro
 
 ----------
 
-**Author**: Manny Juan (`manyo`)  
+**Author**: Manny Juan (`manyone`)  
 **Date**: October 2025  
 **Target Standard**: ANSI COBOL-74
 
@@ -95,3 +138,4 @@ Public domain. Use, modify, and share freely — especially in mainframe classro
   
 
 ---
+
