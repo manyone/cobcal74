@@ -1,5 +1,5 @@
 
-# cobcal74.cob – A COBOL-74 Expression Evaluator (for TK-)
+# cobcal74.cob – A COBOL-74 Expression Evaluator (for TK4-)
 
 A **classic fixed-format COBOL-74** program that evaluates arithmetic expressions with floating-point precision. Designed to run in vintage environments like **TK4- (Hercules MVS)** and modern GNU COBOL (with `-std=cobol74`).
 
@@ -36,7 +36,8 @@ Evaluation proceeds **left to right**, applying operators according to precedenc
 > 🔹 **Unary minus** is handled by pushing a `0` and treating `-` as binary: `-5` → `0 - 5`.
 > 
 > 🔹 **Unary minus**  is **only supported** at the start of an expression or right after `'('`. Expressions like `3 * -4` are **not accepted**; use `3 * (-4)` instead.
-
+> 
+> 🔹 The **sqrt**  can be calculated using exponentiation:  `(3^4+4^5)^(0.5))`
 ---
 
 ## 🧪 Examples
@@ -138,4 +139,5 @@ Public domain. Use, modify, and share freely — especially in mainframe classro
   
 
 ---
+
 
