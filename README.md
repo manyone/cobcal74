@@ -37,7 +37,7 @@ Evaluation proceeds **left to right**, applying operators according to precedenc
 > 
 > 🔹 **Unary minus**  is **only supported** at the start of an expression or right after `'('`. Expressions like `3 * -4` are **not accepted**; use `3 * (-4)` instead.
 > 
-> 🔹 The **sqrt**  can be calculated using exponentiation:  `(3^4+4^5)^(0.5))`
+> 🔹 The **sqrt** function can be calculated using exponentiation:  `(3^2+4^2)^(0.5)`
 ---
 
 ## 🧪 Examples
@@ -50,6 +50,7 @@ Evaluation proceeds **left to right**, applying operators according to precedenc
 | `2^(3^2)`        | `512.00000`| Parentheses override |
 | `(10 - 2) / 2`   | `4.00000`  | Grouping |
 | `1/3`            | `0.33333`  | Floating-point division |
+| `(3^2+4^2)^(0.5)`| `5.00000`  | Square root |
 
 Type `END` to quit.
 
@@ -73,7 +74,7 @@ cobc -x -std=cobol74 cobcal74.cob -o cobcal74
 
 > 💡 The program includes `>>SOURCE FORMAT IS FIXED` for compatibility with GNU COBOL in online IDEs like JDoodle.
 
-Below is the actual step for running the test suite
+Below is the actual step for running the test suite, following a successful compile.
 ```
 //HERC02C  JOB (COB),                         
 //             'COBCAL74',                    
@@ -139,5 +140,6 @@ Public domain. Use, modify, and share freely — especially in mainframe classro
   
 
 ---
+
 
 
